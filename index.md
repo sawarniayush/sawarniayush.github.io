@@ -8,7 +8,10 @@ I am a research fellow at Microsoft Research, India.
 
 ## Research Interests
 
-- Causal Inference, Bandit Algortihms, Game Theory, Theoretical Machine Learning
+- Causal Inference
+- Bandit Algortihms and Reinforcement Learning
+- Game Theory
+- Theoretical Machine Learning
 
 <!-- ## News
 
