@@ -12,10 +12,11 @@ Prior to my MTech, I was a software engineer at Goldman Sachs Bangalore, where I
 
 ## Research Interests
 
+- Theoretical Machine Learning
 - Causal Inference
 - Bandit Algortihms and Reinforcement Learning
 - Game Theory
-- Theoretical Machine Learning
+
 
 <!-- ## News
 
