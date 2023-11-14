@@ -44,11 +44,11 @@
 
 <div class="pub-row">
   <div class="col-sm-9" style="position: relative;padding-right: 15px;padding-left: 20px;">
-    <div class="title"><a href="assets/files/ayush_resume.pdf">Bandit Algorithms: Fairness, Welfare and Applications to Causal Inference</a></div>
+    <div class="title"><a href="assets/files/thesis.pdf">Bandit Algorithms: Fairness, Welfare and Applications to Causal Inference</a></div>
     <div class="author"> <strong>Ayush Sawarni</strong></div>
-    <div class="periodical"><em>Masters Thesis</em> 2023</div>
+    <div class="periodical">Master's Thesis</div>
     <div class="links">
-      <a href="assets/files/ayush_resume.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+      <a href="assets/files/thesis.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
       <!-- <strong><i style="color:#e74d3c">Oral Presentation</i></strong> -->
     </div>
   </div>
