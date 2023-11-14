@@ -48,7 +48,7 @@
     <div class="author"> <strong>Ayush Sawarni</strong></div>
     <div class="periodical"><em>Masters Thesis</em> 2023</div>
     <div class="links">
-      <a href="" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+      <a href="assets/files/ayush_resume.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
       <!-- <strong><i style="color:#e74d3c">Oral Presentation</i></strong> -->
     </div>
   </div>
