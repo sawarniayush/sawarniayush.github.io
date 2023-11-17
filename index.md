@@ -14,7 +14,7 @@ Prior to my MTech, I was a software engineer at Goldman Sachs Bangalore, where I
 
 - Theoretical Machine Learning
 - Causal Inference
-- Bandit Algortihms and Reinforcement Learning
+- Bandit Algorithms and Reinforcement Learning
 - Game Theory
 
 
