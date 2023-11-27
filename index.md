@@ -8,7 +8,7 @@ I am a Research Fellow at Microsoft Research India, where I work with [Gaurav Si
 
 Before joining MSR, I spent two amazing years as an MTech research student at the Indian Institute of Science (IISc) Bangalore, where I was advised by [Prof. Siddharth Barman](https://www.csa.iisc.ac.in/~barman/). I also had the opportunity to collaborate with [Prof. Arindam Khan](https://www.csa.iisc.ac.in/~arindamkhan/). I worked on problems related to Multi-armed Bandits, Fairness, and Causal Inference.
 
-Prior to my MTech, I was a software engineer at Goldman Sachs Bangalore, where I built scalable software for big data. Before that, I obtained my undergraduate degree from BITS Pilani in Electrical and Electronics Engineering.
+Prior to my MTech, I worked at Goldman Sachs Bangalore, where I built scalable analytics for fraud detection. Before that, I obtained my undergraduate degree in Electrical and Electronics Engineering from BITS Pilani.
 
 ## Research Interests
 
