@@ -9,11 +9,10 @@
     <div class="title"><a href="https://arxiv.org/abs/2310.02023">Optimal Regret with Limited Adaptivity for Generalized Linear Contextual
 Bandits</a></div>
     <div class="author"> <strong>Ayush Sawarni</strong>, Nirjhar Das, Siddharth Barman, Gaurav Sinha</div>
-    <div class="periodical"><em>(Under Submission)</em> 2023</div>
-    <div class="links">
+    <div class="periodical"><em>(Under Submission)</em></div>
+<!--     <div class="links">
       <a href="https://arxiv.org/pdf/2310.02023.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
-      <!-- <strong><i style="color:#e74d3c">Oral Presentation</i></strong> -->
-    </div>
+    </div> -->
   </div>
 </div>
   
