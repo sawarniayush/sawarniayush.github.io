@@ -6,7 +6,7 @@
 <li>
 <div class="pub-row">
   <div class="col-sm-9" style="position: relative;padding-right: 15px;padding-left: 20px;">
-    <div class="title"><a href="https://arxiv.org/abs/2310.02023">Optimal Regret with Limited Adaptivity for Generalized Linear Contextual
+    <div class="title"><a href="">Optimal Regret with Limited Adaptivity for Generalized Linear Contextual
 Bandits</a></div>
     <div class="author"> <strong>Ayush Sawarni</strong>, Nirjhar Das, Siddharth Barman, Gaurav Sinha</div>
     <div class="periodical"><em>(Under Submission)</em></div>
