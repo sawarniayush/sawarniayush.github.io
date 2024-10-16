@@ -6,13 +6,13 @@
 <li>
 <div class="pub-row">
   <div class="col-sm-9" style="position: relative;padding-right: 15px;padding-left: 20px;">
-    <div class="title"><a href="">Optimal Regret with Limited Adaptivity for Generalized Linear Contextual
-Bandits</a></div>
+    <div class="title"><a href="">Generalized Linear Bandits with Limited Adaptivity</a></div>
     <div class="author"> <strong>Ayush Sawarni</strong>, Nirjhar Das, Siddharth Barman, Gaurav Sinha</div>
-    <div class="periodical"><em>(Under Submission)</em></div>
-<!--     <div class="links">
-      <a href="https://arxiv.org/pdf/2310.02023.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
-    </div> -->
+    <div class="periodical"><em>NeurIPS</em> 2024</div>
+    <div class="links">
+      <a href="https://arxiv.org/pdf/2404.06831" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+      <strong><i style="color:#e74d3c">Spotlight</i></strong>
+    </div>
   </div>
 </div>
   
