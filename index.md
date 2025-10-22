@@ -4,18 +4,16 @@ layout: homepage
 
 ## About Me
 
-I am a Research Fellow at Microsoft Research India, where I work with [Gaurav Sinha](https://www.microsoft.com/en-us/research/people/gauravsinha/) on problems related to online learning with large decision sets. 
+I am a second-year Operations Research PhD student at Stanford University. I am broadly interested in Causal Inference, Large Language Model Evaluation, Preference Learning, and Econometrics.
 
-Before joining MSR, I spent two amazing years as an MTech research student at the Indian Institute of Science (IISc) Bangalore, where I was advised by [Prof. Siddharth Barman](https://www.csa.iisc.ac.in/~barman/). I also had the opportunity to collaborate with [Prof. Arindam Khan](https://www.csa.iisc.ac.in/~arindamkhan/). I worked on problems related to Multi-armed Bandits, Fairness, and Causal Inference.
-
-Prior to my MTech, I worked at Goldman Sachs Bangalore, where I built scalable analytics for fraud detection. Before that, I obtained my undergraduate degree in Electrical and Electronics Engineering from BITS Pilani.
+I am advised by [Vasilis Syrgkanis](https://vsyrgkanis.com/) and am part of the [Stanford Causal AI Lab](https://scail.stanford.edu/).
 
 ## Research Interests
 
-- Theoretical Machine Learning
 - Causal Inference
-- Online Learning and Bandit Algorithms
-- Game Theory
+- Large Language Model Evaluation
+- Preference Learning
+- Econometrics
 
 
 <!-- ## News
