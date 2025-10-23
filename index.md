@@ -15,12 +15,12 @@ Earlier in my career, I worked at Goldman Sachs Bangalore, where I built scalabl
 ## Research Interests
 
 - Causal Inference
-- Large Language Model Evaluation
-- Preference Learning
-- Econometrics
-- Theoretical Machine Learning
 - Online Learning and Bandit Algorithms
-- Game Theory
+- Large Language Model Evaluation
+- Preference Elicitation and Learning from Human Feedback
+- Econometrics
+
+
 
 
 <!-- ## News
