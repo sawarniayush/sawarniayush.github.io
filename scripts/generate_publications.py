@@ -91,8 +91,42 @@ def _parse_entry(entry: str) -> Dict[str, str]:
     return fields
 
 
+def _normalize_author_name(name: str) -> str:
+    """Return a consistently formatted author name.
+
+    BibTeX allows author names to be written as "First Last" or
+    "Last, First". The site expects "First Last" ordering so we
+    normalise the name here. Any suffix that appears after the first
+    comma (for example "Jr.") is preserved.
+    """
+
+    # Collapse repeated whitespace and trim the name.
+    normalised = re.sub(r"\s+", " ", name.strip())
+    if "," not in normalised:
+        return normalised
+
+    parts = [part.strip() for part in normalised.split(",")]
+    if len(parts) < 2:
+        return normalised
+
+    last_name, first_names, *rest = parts
+    if not first_names:
+        return normalised
+
+    reordered = f"{first_names} {last_name}".strip()
+    if rest:
+        suffix = ", ".join(segment for segment in rest if segment)
+        if suffix:
+            reordered = f"{reordered}, {suffix}"
+    return reordered
+
+
 def _format_authors(author_field: str, author_note: str | None) -> str:
-    authors = [name.strip() for name in author_field.replace("\n", " ").split(" and ") if name.strip()]
+    authors = [
+        _normalize_author_name(name)
+        for name in author_field.replace("\n", " ").split(" and ")
+        if name.strip()
+    ]
     formatted = []
     for name in authors:
         if name.lower() == PRIMARY_AUTHOR.lower():
