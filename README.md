@@ -26,8 +26,7 @@ A template for Max Planck Institute for Informatics is available here: [[link](h
 ```
 .
 ├── _includes                    
-|   ├── publications.md                       # the Markdown file for publications
-|   └── services.md                           # the Markdown file for services
+|   └── publications.md                       # the Markdown file for publications
 ├── _layouts                  
 |   └── homepage.html                         #  the html template for the homepage 
 ├── _sass
@@ -145,8 +144,8 @@ Create `index.md` and add your personal information. It supports **Markdown** an
 
 ### Edit included files
 
-There are two markdown files included in `index.md`. They are `_includes/publications.md` and `_includes/service.md`, respectively. These two files also support **Markdown** and **HTML** syntax. If you don't hope to include these two files, you may remove the following lines in `index.md`:
-https://github.com/yaoyao-liu/minimal-light/blob/b38070cd0b6bce45d8a885f3828549af8f82b7cb/index.md?plain=1#L21-L23
+There is one markdown file included in `index.md`: `_includes/publications.md`. It supports **Markdown** and **HTML** syntax. If you don't hope to include this file, you may remove the following line in `index.md`:
+https://github.com/yaoyao-liu/minimal-light/blob/b38070cd0b6bce45d8a885f3828549af8f82b7cb/index.md?plain=1#L21
 
 
 ### Stylesheet

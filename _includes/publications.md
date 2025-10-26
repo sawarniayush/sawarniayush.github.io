@@ -23,7 +23,6 @@
     <div class="periodical"><em>NeurIPS</em> 2023</div>
     <div class="links">
       <a href="https://arxiv.org/pdf/2310.02023.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
-      <!-- <strong><i style="color:#e74d3c">Oral Presentation</i></strong> -->
     </div>
   </div>
 </div>
@@ -35,7 +34,6 @@
     <div class="periodical"><em><strong>UAI</strong> 2023</em></div>
     <div class="links">
       <a href="https://arxiv.org/pdf/2305.04638.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
-      <!-- <strong><i style="color:#e74d3c">Oral Presentation</i></strong> -->
     </div>
   </div>
 </div>
@@ -60,7 +58,6 @@
     <div class="periodical">Master's Thesis</div>
     <div class="links">
       <a href="assets/files/thesis.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
-      <!-- <strong><i style="color:#e74d3c">Oral Presentation</i></strong> -->
     </div>
   </div>
 </div>
@@ -71,3 +68,4 @@
 
 </ol>
 </div>
+
