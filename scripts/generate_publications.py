@@ -165,10 +165,6 @@ def _build_links(fields: Dict[str, str]) -> List[str]:
             links.append(
                 f'      <a href="{url}" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">{label}</a>'
             )
-    highlight = fields.get("highlight", "").strip()
-    if highlight:
-        color = fields.get("highlight_color", "#e74d3c").strip() or "#e74d3c"
-        links.append(f'      <strong><i style="color:{color}">{highlight}</i></strong>')
     return links
 
 
@@ -178,6 +174,11 @@ def _render_entry(fields: Dict[str, str], index: int) -> str:
     author_note = fields.get("author_note", "").strip()
     author_text = _format_authors(fields.get("author", ""), author_note if author_note else None)
     periodical = _format_periodical(fields)
+    highlight = fields.get("highlight", "").strip()
+    highlight_html = ""
+    if highlight:
+        color = fields.get("highlight_color", "#e74d3c").strip() or "#e74d3c"
+        highlight_html = f' <strong><i style="color:{color}">{highlight}</i></strong>'
     links = _build_links(fields)
 
     parts = [
@@ -190,8 +191,9 @@ def _render_entry(fields: Dict[str, str], index: int) -> str:
         parts.append(f'    <div class="title"><a href="">{title}</a></div>')
     prefix = " " if author_text.startswith("<") else ""
     parts.append(f'    <div class="author">{prefix}{author_text}</div>')
-    if periodical:
-        parts.append(f"    <div class=\"periodical\">{periodical}</div>")
+    if periodical or highlight_html:
+        periodical_html = periodical + highlight_html
+        parts.append(f"    <div class=\"periodical\">{periodical_html.strip()}</div>")
     if links:
         parts.append('    <div class="links">')
         parts.extend(links)
