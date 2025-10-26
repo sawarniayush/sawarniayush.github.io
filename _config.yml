@@ -1,45 +1,47 @@
-# Basic Information 
-title: Ayush Sawarni
-position: OR PhD Student
-affiliation: Stanford
+# Site settings
+lang: en
+permalink: pretty
+
+# Profile
+name: Ayush Sawarni
+title: OR PhD Student
+institution: Stanford University
 email: ayushsaw@stanford.edu
-# Search Engine Optimization (SEO)
-# The following information is used to improve the website traffic from search engines, e.g., Google.
-keywords: minimal light
-description: The Minimal Light is a simple and elegant jekyll theme for academic personal homepage.
-canonical: https://minimal-light-theme.yliu.me/
+location: Stanford, CA
+short_bio: >-
+  I am a second-year Operations Research PhD student at Stanford University where I work on causal inference, bandit algorithms, and learning from human feedback.
 
-# Links 
-# If you don't need one of them, you may delete the corresponding line.
-google_scholar: https://scholar.google.com/citations?user=U8TSPdAAAAAJ&hl=en&oi=ao
-cv_link: assets/files/ayush_CV.pdf
-github_link: https://github.com/sawarniayush
-linkedin: https://www.linkedin.com/in/ayush-sawarni/
-twitter: https://twitter.com/ayushsawarni
+# Meta
+keywords:
+  - causal inference
+  - bandits
+  - operations research
+  - machine learning
+  - fairness
+  - llm evaluation
+description: Personal academic website for Ayush Sawarni.
+url: ""
+baseurl: ""
 
-# Images (e.g., your profile picture and your website's favicon) 
-# "favicon" and "favicon_dark" are used for the light and dark modes, respectively. 
-avatar: ./assets/img/2EE4D34E-9124-4015-8C94-69D582072620_1_201_a.jpeg
-favicon: ./assets/img/club.png
-favicon_dark: ./assets/img/club.png
+# Social links
+social:
+  google_scholar: https://scholar.google.com/citations?user=U8TSPdAAAAAJ&hl=en&oi=ao
+  cv: assets/files/ayush_CV.pdf
+  github: https://github.com/sawarniayush
+  linkedin: https://www.linkedin.com/in/ayush-sawarni/
+  twitter: https://twitter.com/ayushsawarni
 
-# Footnote
-# You may use the option to disable the footnote, "Powered by Jekyll and Minimal Light theme."
-enable_footnote: false
+# Assets
+avatar: /assets/img/2EE4D34E-9124-4015-8C94-69D582072620_1_201_a.jpeg
+favicon: /assets/img/club.png
 
-# Auto Dark Mode
-# You may use the option to disable the automatic dark theme
-auto_dark_mode: false
+# Build settings
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
 
-# Google Analytics ID
-# Please remove this if you don't use Google Analytics
-google_analytics: UA-111540567-4
-
-# Use this project as a remote theme for GitHub Pages
-# See the guide here: https://docs.github.com/en/pages/setting-up-a-github-pages-site-with-jekyll/adding-a-theme-to-your-github-pages-site-using-jekyll
-remote_theme: yaoyao-liu/minimal-light
-
-# The following files will be removed from the generated website.
 exclude:
   - Gemfile
   - Gemfile.lock
@@ -49,3 +51,13 @@ exclude:
   - README_de.md
   - LICENSE
   - minimal-light.gemspec
+  - vendor
+
+sass:
+  style: compressed
+
+# Collections
+collections:
+  posts:
+    output: true
+

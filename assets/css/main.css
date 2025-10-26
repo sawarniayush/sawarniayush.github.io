@@ -1,0 +1,250 @@
+:root {
+  color-scheme: light;
+  font-size: 16px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  color: #1f2933;
+  background-color: #ffffff;
+}
+
+a {
+  color: #0b57d0;
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: 1rem;
+  background-color: #0b57d0;
+  color: #ffffff;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.25rem;
+  z-index: 1000;
+}
+
+.skip-link:focus {
+  left: 1rem;
+}
+
+.wrapper {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.site-header {
+  background-color: #f6f7fb;
+  border-bottom: 1px solid #e5e7eb;
+  padding: 2rem 0 1.5rem;
+}
+
+.site-kicker {
+  margin: 0;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #6b7280;
+}
+
+.site-title {
+  margin: 0.35rem 0 0.5rem;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.site-title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.site-meta {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #4b5563;
+}
+
+.site-main {
+  padding: 0;
+}
+
+.section {
+  padding: 2.75rem 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.section:last-of-type {
+  border-bottom: 0;
+}
+
+.section--content {
+  background-color: #ffffff;
+}
+
+.section-title {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #111827;
+}
+
+.section-note {
+  margin: 0.75rem 0 0;
+  font-size: 0.95rem;
+  color: #4b5563;
+}
+
+.prose > *:first-child {
+  margin-top: 0;
+}
+
+.prose > * + * {
+  margin-top: 1.25rem;
+}
+
+.prose h2 {
+  font-size: 1.5rem;
+  margin: 2rem 0 0.75rem;
+  color: #111827;
+}
+
+.prose h3 {
+  font-size: 1.2rem;
+  margin: 1.5rem 0 0.5rem;
+  color: #111827;
+}
+
+.prose p {
+  margin: 0;
+}
+
+.prose ul,
+.prose ol {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.prose li + li {
+  margin-top: 0.25rem;
+}
+
+
+.publication-list {
+  margin: 1.75rem 0 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.publication-item {
+  margin-bottom: 1.75rem;
+}
+
+.publication-title {
+  font-size: 1.1rem;
+  margin: 0;
+  font-weight: 600;
+}
+
+.publication-title a {
+  color: inherit;
+}
+
+.publication-meta,
+.publication-authors,
+.publication-note {
+  margin: 0.4rem 0 0;
+  font-size: 0.95rem;
+  color: #374151;
+}
+
+.publication-authors strong {
+  font-weight: 600;
+}
+
+.publication-tags {
+  margin: 0.6rem 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.15rem 0.5rem;
+  border-radius: 999px;
+  background-color: #eef2ff;
+  color: #3730a3;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.publication-links {
+  margin: 0.6rem 0 0;
+  font-size: 0.95rem;
+  color: #0b57d0;
+}
+
+.publication-links a {
+  color: inherit;
+}
+
+.site-footer {
+  background-color: #f6f7fb;
+  padding: 2.5rem 0;
+}
+
+.contact-list {
+  list-style: none;
+  margin: 1rem 0 1.5rem;
+  padding: 0;
+}
+
+.contact-list li + li {
+  margin-top: 0.35rem;
+}
+
+.site-footer__note {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+@media (max-width: 600px) {
+  .wrapper {
+    padding: 0 1rem;
+  }
+
+  .site-header {
+    padding: 1.75rem 0 1.25rem;
+  }
+
+  .site-title {
+    font-size: 1.75rem;
+  }
+
+  .section {
+    padding: 2.25rem 0;
+  }
+
+  .publication-list {
+    padding-left: 0;
+  }
+}

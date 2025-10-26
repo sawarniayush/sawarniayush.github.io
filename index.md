@@ -1,34 +1,31 @@
 ---
 layout: homepage
+title: Home
+bibliography: assets/data/references.bib
+primary_author: Ayush Sawarni
+scripts:
+  - /assets/js/bibliography.js
 ---
 
-## About Me
+## About
 
-I am a second-year Operations Research PhD student at Stanford University. I am advised by [Vasilis Syrgkanis](https://vsyrgkanis.com/) and am part of the [Stanford Causal AI Lab](https://scail.stanford.edu/).
+I am a second-year Operations Research PhD student at Stanford University, advised by [Vasilis Syrgkanis](https://vsyrgkanis.com/) in the [Stanford Causal AI Lab](https://scail.stanford.edu/). My work sits at the intersection of causal inference, online learning, and human-centered algorithm design.
 
-Before starting my PhD, I was a Research Fellow at Microsoft Research India, where I worked with [Gaurav Sinha](https://www.microsoft.com/en-us/research/people/gauravsinha/) on problems related to online learning with large decision sets.
+Before graduate school I was a Research Fellow at Microsoft Research India, working with [Gaurav Sinha](https://www.microsoft.com/en-us/research/people/gauravsinha/) on online learning with large decision sets. I previously completed an MTech by research at the Indian Institute of Science (IISc) Bangalore with [Prof. Siddharth Barman](https://www.csa.iisc.ac.in/~barman/) and [Prof. Arindam Khan](https://www.csa.iisc.ac.in/~arindamkhan/), where I studied multi-armed bandits, fairness, and causal inference. Earlier, at Goldman Sachs Bangalore, I built scalable analytics for fraud detection. I earned my undergraduate degree in Electrical and Electronics Engineering from BITS Pilani.
 
-Prior to that, I spent two amazing years as an MTech research student at the Indian Institute of Science (IISc) Bangalore, where I was advised by [Prof. Siddharth Barman](https://www.csa.iisc.ac.in/~barman/) and had the opportunity to collaborate with [Prof. Arindam Khan](https://www.csa.iisc.ac.in/~arindamkhan/). I worked on problems related to Multi-armed Bandits, Fairness, and Causal Inference.
+## Research interests
 
-Earlier in my career, I worked at Goldman Sachs Bangalore, where I built scalable analytics for fraud detection. I received my undergraduate degree in Electrical and Electronics Engineering from BITS Pilani.
+- Causal inference
+- Online learning and bandit algorithms
+- Preference elicitation and learning from human feedback
+- LLM evaluation
 
-## Research Interests
+## Open problems I am thinking about
 
-- Causal Inference
-- Online Learning and Bandit Algorithms
-- Preference Elicitation and Learning from Human Feedback
-- LLM Evaluation
+- How to design adaptive experimentation pipelines that remain reliable under limited interventions.
+- Learning from heterogeneous human feedback while providing strong welfare guarantees.
+- Building evaluation methodologies for large language models that prioritize transparency and reproducibility.
 
+## Service & community
 
-
-
-<!-- ## News
-
-- **[Feb. 2020]** Our paper about incremental learning is accepted to CVPR 2020.
-- **[Feb. 2020]** We will host the ACM Multimedia Asia 2020 conference in Singapore!
-- **[Sept. 2019]** Our paper about few-shot learning is accepted to NeurIPS 2019.
-- **[Mar. 2019]** Our paper about few-shot learning is accepted to CVPR 2019. -->
-
-{% include_relative _includes/publications.md %}
-
-<!-- {% include_relative _includes/services.md %} -->
+I enjoy sharing work with broader research communities through talks and mentoring. Feel free to reach out if you would like to collaborate on open problems in online decision-making or causal inference.
