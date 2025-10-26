@@ -25,8 +25,8 @@ A template for Max Planck Institute for Informatics is available here: [[link](h
 
 ```
 .
-├── _includes                    
-|   └── publications.md                       # the Markdown file for publications
+├── _includes
+|   └── publications.md                       # generated from publications.bib via scripts/generate_publications.py
 ├── _layouts                  
 |   └── homepage.html                         #  the html template for the homepage 
 ├── _sass
@@ -92,6 +92,20 @@ bundle exec jekyll server
 ```
 View the live page using `localhost`:
 <http://localhost:4000>. You can get the HTML files in `_site` folder.
+
+## Managing publications
+
+Edit `publications.bib` to add, update, or remove publications. Regenerate the include that powers the homepage list by running:
+
+```bash
+python3 scripts/generate_publications.py
+```
+
+If you only want to ensure that the committed include matches the BibTeX source, run the generator in check mode:
+
+```bash
+python3 scripts/generate_publications.py --check
+```
 
 ## Customizing
 
