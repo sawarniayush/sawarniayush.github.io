@@ -32,7 +32,7 @@
   <div class="col-sm-9" style="position: relative;padding-right: 15px;padding-left: 20px;">
     <div class="title"><a href="">Generalized Linear Bandits with Limited Adaptivity</a></div>
     <div class="author"> <strong>Ayush Sawarni</strong>, Nirjhar Das, Siddharth Barman, Gaurav Sinha</div>
-    <div class="periodical"><em>NeurIPS</em> 2024 <strong><i style="color:#e74d3c">Spotlight</i></strong></div>
+    <div class="periodical"><em>NeurIPS</em> 2024 <strong><i style="color:#e74d3c">(Spotlight)</i></strong></div>
     <div class="links">
       <a href="https://arxiv.org/pdf/2404.06831" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
     </div>
