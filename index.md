@@ -14,9 +14,9 @@ Earlier in my career, I worked at Goldman Sachs Bangalore, where I built scalabl
 
 ## Research Interests
 
-- ML & Statistics: statistical estimation theory, efficiency, and robustness
-- Causal Inference: methodology and applications, identification & estimation
-- Online Learning & Bandits: algorithms with provable guarantees and data-adaptive exploration
-- GenAI Evaluation: formal evaluation frameworks and principled benchmarks
+- **ML & Statistics:** statistical estimation theory, efficiency, and robustness
+- **Causal Inference:** methodology and applications, identification & estimation
+- **Online Learning & Bandits:** algorithms with provable guarantees and data-adaptive exploration
+- **GenAI Evaluation:** formal evaluation frameworks and principled benchmarks
 
 {% include_relative _includes/publications.md %}
