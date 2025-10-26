@@ -7,6 +7,18 @@
 <li>
 <div class="pub-row">
   <div class="col-sm-9" style="position: relative;padding-right: 15px;padding-left: 20px;">
+    <div class="title"><a href="https://arxiv.org/abs/2505.22820">Preference Learning with Response Time: Robust Losses and Guarantees</a></div>
+    <div class="author"> <strong>Ayush Sawarni</strong>, Sahasrajit Sarmasarkar, Vasilis Syrgkanis</div>
+    <div class="periodical"><em>NeurIPS</em> 2025</div>
+    <div class="links">
+      <a href="https://arxiv.org/pdf/2505.22820" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+      <a href="https://youtu.be/wiPLQZZORlk?si=J1oT-behaeuapy-k" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Talk</a>
+    </div>
+  </div>
+</div>
+  
+<div class="pub-row">
+  <div class="col-sm-9" style="position: relative;padding-right: 15px;padding-left: 20px;">
     <div class="title"><a href="">Generalized Linear Bandits with Limited Adaptivity</a></div>
     <div class="author"> <strong>Ayush Sawarni</strong>, Nirjhar Das, Siddharth Barman, Gaurav Sinha</div>
     <div class="periodical"><em>NeurIPS</em> 2024 <strong><i style="color:#e74d3c">Spotlight</i></strong></div>
@@ -26,12 +38,12 @@
     </div>
   </div>
 </div>
-  
+
 <div class="pub-row">
   <div class="col-sm-9" style="position: relative;padding-right: 15px;padding-left: 20px;">
     <div class="title"><a href="https://arxiv.org/pdf/2205.13930">Learning Good Interventions in Causal Graphs via Covering</a></div>
     <div class="author"> <strong>Ayush Sawarni</strong>, Rahul Madhavan, Gaurav Sinha, Siddharth Barman</div>
-    <div class="periodical"><em><strong>UAI</strong> 2023</em></div>
+    <div class="periodical">UAI 2023</div>
     <div class="links">
       <a href="https://arxiv.org/pdf/2305.04638.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
     </div>
@@ -46,6 +58,7 @@
     <div class="links">
       <a href="https://arxiv.org/pdf/2205.13930.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
       <a href="https://youtu.be/W3B01V_Tl7Q" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Talk</a>
+      <strong><i style="color:#e74d3c">Oral</i></strong>
     </div>
   </div>
 </div>
@@ -57,6 +70,16 @@
     <div class="periodical">Master's Thesis</div>
     <div class="links">
       <a href="assets/files/thesis.pdf" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+    </div>
+  </div>
+</div>
+
+<div class="pub-row">
+  <div class="col-sm-9" style="position: relative;padding-right: 15px;padding-left: 20px;">
+    <div class="title"><a href="https://arxiv.org/abs/2510.19672">Policy Learning with Abstention</a></div>
+    <div class="author"> <strong>Ayush Sawarni</strong>, Jikai Jin, Justin Whitehouse, Vasilis Syrgkanis</div>
+    <div class="links">
+      <a href="https://arxiv.org/pdf/2510.19672" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
     </div>
   </div>
 </div>

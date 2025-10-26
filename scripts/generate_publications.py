@@ -5,14 +5,14 @@ from __future__ import annotations
 import argparse
 import re
 from pathlib import Path
-from typing import Dict, Iterable, List
+from typing import Dict, Iterable, List, Tuple
 
 ROOT = Path(__file__).resolve().parents[1]
 BIB_PATH = ROOT / "publications.bib"
 OUTPUT_PATH = ROOT / "_includes" / "publications.md"
 PRIMARY_AUTHOR = "Ayush Sawarni"
 
-LINK_FIELDS: list[tuple[str, str]] = [
+LINK_FIELDS: List[Tuple[str, str]] = [
     ("pdf", "PDF"),
     ("slides", "Slides"),
     ("poster", "Poster"),
@@ -91,8 +91,42 @@ def _parse_entry(entry: str) -> Dict[str, str]:
     return fields
 
 
+def _normalize_author_name(name: str) -> str:
+    """Return a consistently formatted author name.
+
+    BibTeX allows author names to be written as "First Last" or
+    "Last, First". The site expects "First Last" ordering so we
+    normalise the name here. Any suffix that appears after the first
+    comma (for example "Jr.") is preserved.
+    """
+
+    # Collapse repeated whitespace and trim the name.
+    normalised = re.sub(r"\s+", " ", name.strip())
+    if "," not in normalised:
+        return normalised
+
+    parts = [part.strip() for part in normalised.split(",")]
+    if len(parts) < 2:
+        return normalised
+
+    last_name, first_names, *rest = parts
+    if not first_names:
+        return normalised
+
+    reordered = f"{first_names} {last_name}".strip()
+    if rest:
+        suffix = ", ".join(segment for segment in rest if segment)
+        if suffix:
+            reordered = f"{reordered}, {suffix}"
+    return reordered
+
+
 def _format_authors(author_field: str, author_note: str | None) -> str:
-    authors = [name.strip() for name in author_field.replace("\n", " ").split(" and ") if name.strip()]
+    authors = [
+        _normalize_author_name(name)
+        for name in author_field.replace("\n", " ").split(" and ")
+        if name.strip()
+    ]
     formatted = []
     for name in authors:
         if name.lower() == PRIMARY_AUTHOR.lower():
@@ -131,15 +165,11 @@ def _build_links(fields: Dict[str, str]) -> List[str]:
             links.append(
                 f'      <a href="{url}" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">{label}</a>'
             )
-    return links
-
-
-def _format_highlight(fields: Dict[str, str]) -> str:
     highlight = fields.get("highlight", "").strip()
-    if not highlight:
-        return ""
-    color = fields.get("highlight_color", "#e74d3c").strip() or "#e74d3c"
-    return f'<strong><i style="color:{color}">{highlight}</i></strong>'
+    if highlight:
+        color = fields.get("highlight_color", "#e74d3c").strip() or "#e74d3c"
+        links.append(f'      <strong><i style="color:{color}">{highlight}</i></strong>')
+    return links
 
 
 def _render_entry(fields: Dict[str, str], index: int) -> str:
@@ -148,7 +178,6 @@ def _render_entry(fields: Dict[str, str], index: int) -> str:
     author_note = fields.get("author_note", "").strip()
     author_text = _format_authors(fields.get("author", ""), author_note if author_note else None)
     periodical = _format_periodical(fields)
-    highlight = _format_highlight(fields)
     links = _build_links(fields)
 
     parts = [
@@ -161,14 +190,8 @@ def _render_entry(fields: Dict[str, str], index: int) -> str:
         parts.append(f'    <div class="title"><a href="">{title}</a></div>')
     prefix = " " if author_text.startswith("<") else ""
     parts.append(f'    <div class="author">{prefix}{author_text}</div>')
-    periodical_bits: List[str] = []
     if periodical:
-        periodical_bits.append(periodical)
-    if highlight:
-        periodical_bits.append(highlight)
-    if periodical_bits:
-        periodical_html = " ".join(periodical_bits)
-        parts.append(f"    <div class=\"periodical\">{periodical_html}</div>")
+        parts.append(f"    <div class=\"periodical\">{periodical}</div>")
     if links:
         parts.append('    <div class="links">')
         parts.extend(links)
@@ -180,13 +203,14 @@ def _render_entry(fields: Dict[str, str], index: int) -> str:
     return "\n".join(parts)
 
 
-def _sort_key(fields: Dict[str, str]) -> int:
+def _sort_key(fields: Dict[str, str]) -> Tuple[int, str]:
     year_str = fields.get("year", "").strip()
     try:
         year_value = int(year_str)
     except ValueError:
         year_value = -10**9
-    return year_value
+    title = fields.get("title", "").strip().lower()
+    return year_value, title
 
 
 def _render(entries: Iterable[Dict[str, str]]) -> str:
