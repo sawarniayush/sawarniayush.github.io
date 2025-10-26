@@ -1,172 +1,74 @@
-# The Minimal Light Theme
+# Personal website for Ayush Sawarni
 
-[![LICENSE](https://img.shields.io/github/license/yaoyao-liu/minimal-light?style=flat-square&logo=creative-commons&color=EF9421)](https://github.com/yaoyao-liu/minimal-light/blob/main/LICENSE)
+This repository contains the source for Ayush Sawarni’s academic homepage. The site is built with [Jekyll](https://jekyllrb.com/) and renders a single-page profile that automatically loads publications from a BibTeX file.
 
-\[[Demo the theme](https://minimal-light-theme.yliu.me/)\]  \[[简体中文](https://github.com/yaoyao-liu/minimal-light/blob/master/README_zh_Hans.md) | [繁體中文](https://github.com/yaoyao-liu/minimal-light/blob/master/README_zh_Hant.md) | [Deutsche](https://github.com/yaoyao-liu/minimal-light/blob/master/README_de.md)\]
- 
-*This is the source code of my homepage. I build this website based on [minimal](https://github.com/orderedlist/minimal).*
-<br>
-*Feel free to use and share the source code anywhere you like.*
+## Key features
 
-The latest version of my homepage is available here: [[link](https://github.com/yaoyao-liu/yaoyao-liu.github.io)]
-<br>
-A template for Max Planck Institute for Informatics is available here: [[link](https://github.com/yaoyao-liu/minimal-light-theme-mpi-inf)]
+- Modern, single-page layout with responsive navigation and built-in contact section.
+- Publications and writing samples are generated automatically from [`assets/data/references.bib`](assets/data/references.bib).
+- Simple configuration through [`_config.yml`](./_config.yml) for profile details and social links.
+- Accessible defaults (skip links, keyboard-friendly navigation, reduced-motion support).
 
-## Features
+## Getting started
 
-- Simple and elegant personal homepage theme
-- Jekyll theme, automatically deployed by GitHub Pages
-- Basic search engine optimization
-- Mobile friendly
-- Supporting Markdown 
-- Supporting dark mode
+1. **Install dependencies**
 
-## Project Architecture
+   ```bash
+   bundle install
+   ```
 
-```
-.
-├── _includes                    
-|   ├── publications.md                       # the Markdown file for publications
-|   └── services.md                           # the Markdown file for services
-├── _layouts                  
-|   └── homepage.html                         #  the html template for the homepage 
-├── _sass
-|   ├── minimal-light.scss                    #  this file will be compiled into a CSS file to control the style of the page              
-|   └── minimal-light-no-dark-mode.scss       #  this file is similar to minimal-light.scss with the dark mode disabled
-├── assets                                    #  some files
-├── .gitignore                                #  this file specifies intentionally untracked files that Git should ignore
-├── CNAME                                     #  the custom domain, will be used by GitHub page sevice
-├── Gemfile                                   #  a RubyGems related file
-├── LICENSE                                   #  the license file
-├── README.md                                 #  the readme file (English)
-├── README_de.md                              #  the readme file (German)
-├── README_zh_Hans.md                         #  the readme file (Simplified Chinese)
-├── README_zh_Hant.md                         #  the readme file (Traditional Chinese)
-├── _config.yml                               #  the Jekyll configuration file, including some options of the page  
-└── index.md                                  #  the content of the index page, using Markdown
-```
+2. **Serve the site locally**
 
-## Getting Started
+   ```bash
+   bundle exec jekyll serve
+   ```
 
-This template can be used in the following two ways: 
-- **Using with the GitHub Pages Service.** GitHub will provide you with a server to generate and host web pages.
-- **Using locally with Jekyll.** You may install Jekyll on your own computer and generate static web pages (i.e., HTML files) with this template. After that, you may upload the HTML files to your server.
+   The site will be available at <http://localhost:4000>. Changes to Markdown, HTML, CSS, or JavaScript files will trigger a rebuild.
 
-The detailed instructions are available below.
+## Updating content
 
+### Profile & links
 
-### Using with the GitHub Pages Service
+Edit [`_config.yml`](./_config.yml) to update your name, role, institution, bio, and social links. The hero section and footer read directly from these values.
 
-There are two ways to use this template on GitHub:
+### Homepage sections
 
-#### Fork this repository
-- Fork this repository (or [use this repository as a template](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template)) and change the name to `your-username.github.io`.
+[`index.md`](./index.md) uses regular Markdown. Update headings, paragraphs, and bullet lists to customise the “Research focus”, “Research interests”, and other sections.
 
-- Enable the GitHub pages for that repository following the steps [here](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site#creating-your-site).
+### Publications via BibTeX
 
-#### Using this repository as a remote theme
-To use this theme, add the following to your repository's `_config.yml`:
+Add, edit, or remove entries in [`assets/data/references.bib`](assets/data/references.bib). Each entry supports the following fields:
 
-```yaml
-remote_theme: yaoyao-liu/minimal-light
-```
+| Field       | Purpose                                               |
+|-------------|-------------------------------------------------------|
+| `title`     | Display title (required)                              |
+| `author`    | Author list (use `and` between authors)               |
+| `booktitle` | Venue for conference or workshop papers               |
+| `journal`   | Venue for journal papers                              |
+| `year`      | Year of publication (used for sorting)                |
+| `url`       | Primary link for the paper                            |
+| `pdf`       | Direct link to the PDF (optional)                     |
+| `code`      | Link to a code repository (optional)                  |
+| `slides`    | Slide deck link (optional)                            |
+| `talk`      | Recording or talk link (optional)                     |
+| `poster`    | Poster link (optional)                                |
+| `keywords`  | Comma-separated badges such as `spotlight`, `oral`, `talk`, or `alphabetical` |
+| `note`      | Additional free-form note text                        |
 
-Please note that adding the above line will directly apply all the default settings in this repository to yours.
+Special handling:
 
-If you hope to edit any files (e.g., `index.md`), you still need to copy them to your repository.
+- **Primary author highlighting** – the author that matches `primary_author` (defaults to `site.name`) is automatically bolded.
+- **Alphabetical author lists** – include `alphabetical` in `keywords` to add a badge noting the ordering.
+- **Event spotlights** – include `spotlight`, `oral`, or `talk` in `keywords` to surface presentation highlights.
 
-### Using Locally with Jekyll
+### Images
 
-First, install [Ruby](https://www.ruby-lang.org/en/) and [Jekyll](https://jekyllrb.com/). The install instructions can be found here: <https://jekyllrb.com/docs/installation/#guides>
+Profile and favicon images live in [`assets/img/`](assets/img/). Replace them with files of the same name or update the paths in `_config.yml`.
 
-Then, clone this repository:
+## Deployment
 
-```bash
-git clone https://github.com/yaoyao-liu/minimal-light.git
-cd minimal-light
-```
-Install and run:
-
-```bash
-bundle install
-bundle exec jekyll server
-```
-View the live page using `localhost`:
-<http://localhost:4000>. You can get the HTML files in `_site` folder.
-
-## Customizing
-
-### Configuration variables
-
-The Minimal Light theme will respect the following variables, if set in your site's `_config.yml`:
-
-  ```yaml
-# Basic Information 
-title: Your Name
-position: Ph.D. Student
-affiliation: Your Affiliation
-email: yourname (at) example.edu
-
-# Search Engine Optimization (SEO)
-# The following information is used to improve the website traffic from search engines, e.g., Google.
-keywords: minimal light
-description: The Minimal Light is a simple and elegant jekyll theme for academic personal homepage.
-canonical: https://minimal-light-theme.yliu.me/
-
-# Links 
-# If you don't need one of them, you may delete the corresponding line.
-google_scholar: https://scholar.google.com/
-cv_link: assets/files/curriculum_vitae.pdf
-github_link: https://github.com/
-linkedin: https://www.linkedin.com/
-twitter: https://twitter.com/
-
-# Images (e.g., your profile picture and your website's favicon) 
-# "favicon" and "favicon_dark" are used for the light and dark modes, respectively. 
-avatar: ./assets/img/avatar.png
-favicon: ./assets/img/favicon.png
-favicon_dark: ./assets/img/favicon-dark.png
-
-# Footnote
-# You may use the option to disable the footnote, "Powered by Jekyll and Minimal Light theme."
-enable_footnote: true
-
-# Auto Dark Mode
-# You may use the option to disable the automatic dark theme
-auto_dark_mode: true
-
-# Google Analytics ID
-# Please remove this if you don't use Google Analytics
-google_analytics: UA-111540567-4
-  ```
-### Edit `index.md`
-
-Create `index.md` and add your personal information. It supports **Markdown** and **HTML** syntax.
-
-### Edit included files
-
-There are two markdown files included in `index.md`. They are `_includes/publications.md` and `_includes/service.md`, respectively. These two files also support **Markdown** and **HTML** syntax. If you don't hope to include these two files, you may remove the following lines in `index.md`:
-https://github.com/yaoyao-liu/minimal-light/blob/b38070cd0b6bce45d8a885f3828549af8f82b7cb/index.md?plain=1#L21-L23
-
-
-### Stylesheet
-
-If you'd like to add your own custom styles, you may edit `_sass/minimal-light.scss`.
-
-### Layouts
-
-If you'd like to change the theme's HTML layout, you may edit `_layout/homepage.html`.
+This site is compatible with GitHub Pages. The `github-pages` gem pins the same dependencies that GitHub uses, so the build locally should match the published output. Push changes to the `main` branch (or the branch configured in your repository settings) and GitHub Pages will rebuild the site automatically.
 
 ## License
 
-This work is licensed under a [Creative Commons Zero v1.0 Universal](https://github.com/yaoyao-liu/minimal-light/blob/master/LICENSE) License.
-
-## Acknowledgements
-
-Our project uses the source code from the following repositories:
-
-* [pages-themes/minimal](https://github.com/pages-themes/minimal)
-
-* [orderedlist/minimal](https://github.com/orderedlist/minimal)
-
-* [al-folio](https://github.com/alshedivat/al-folio)
+The content in this repository is © Ayush Sawarni. The build configuration and templates are available under the MIT License.
