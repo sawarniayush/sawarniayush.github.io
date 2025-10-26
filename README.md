@@ -95,13 +95,15 @@ View the live page using `localhost`:
 
 ## Managing publications
 
-Edit `publications.bib` to add, update, or remove publications. Regenerate the include that powers the homepage list by running:
+Edit `publications.bib` to add, update, or remove publications. A GitHub Actions workflow regenerates `_includes/publications.md` on every push to `main`, committing the refreshed include automatically so GitHub Pages serves the latest list.
+
+You can still run the generator locally when previewing changes or when working on a fork:
 
 ```bash
 python3 scripts/generate_publications.py
 ```
 
-If you only want to ensure that the committed include matches the BibTeX source, run the generator in check mode:
+To verify that the committed include matches the BibTeX source without writing to disk, run:
 
 ```bash
 python3 scripts/generate_publications.py --check
