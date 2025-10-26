@@ -1,20 +1,39 @@
 ---
 layout: default
 ---
-<section class="section section--content" id="about">
-  <div class="wrapper prose">
+<section class="hero" id="about">
+  <div class="container hero__inner">
+    <div class="hero__content">
+      <p class="hero__eyebrow">{{ site.title }}</p>
+      <h1 class="hero__title">{{ site.name }}</h1>
+      <p class="hero__subtitle">{{ site.title }} · {{ site.institution }}</p>
+      <p class="hero__description">{{ site.short_bio }}</p>
+      <div class="hero__actions">
+        <a class="button" href="mailto:{{ site.email }}">Email me</a>
+        {% if site.social.cv %}
+        <a class="button button--ghost" href="{{ site.social.cv | relative_url }}" target="_blank" rel="noopener">Download CV</a>
+        {% endif %}
+      </div>
+    </div>
+    <div class="hero__avatar">
+      <img src="{{ site.avatar | relative_url }}" alt="Portrait of {{ site.name }}" loading="lazy" />
+    </div>
+  </div>
+</section>
+<section class="section" id="interests">
+  <div class="container">
     {{ content }}
   </div>
 </section>
-<section class="section" id="publications">
-  <div class="wrapper">
-    <h2 class="section-title">Publications &amp; writing</h2>
-    <p class="section-note">Entries are loaded from <code>{{ page.bibliography | default: 'assets/data/references.bib' }}</code>. Update the BibTeX file and refresh the page to keep the list current.</p>
-    <ol
+<section class="section section--alternate" id="publications">
+  <div class="container">
+    <h2 class="section-title">Publications &amp; Writing</h2>
+    <p class="section-lede">Entries are read directly from <code>{{ page.bibliography | default: 'assets/data/references.bib' }}</code>. Update the BibTeX file to add new work.</p>
+    <div
       id="publications-list"
-      class="publication-list"
+      class="publications"
       data-bibliography="{{ (page.bibliography | default: 'assets/data/references.bib') | relative_url }}"
       data-primary-author="{{ page.primary_author | default: site.name }}"
-    ></ol>
+    ></div>
   </div>
 </section>

@@ -7,7 +7,7 @@ scripts:
   - /assets/js/bibliography.js
 ---
 
-## About
+## Research focus
 
 I am a second-year Operations Research PhD student at Stanford University, advised by [Vasilis Syrgkanis](https://vsyrgkanis.com/) in the [Stanford Causal AI Lab](https://scail.stanford.edu/). My work sits at the intersection of causal inference, online learning, and human-centered algorithm design.
 

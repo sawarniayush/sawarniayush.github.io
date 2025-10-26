@@ -1,6 +1,13 @@
 # Personal website for Ayush Sawarni
 
-This repository contains the source for Ayush Sawarni’s academic homepage. The site is a minimal single page built with [Jekyll](https://jekyllrb.com/) that keeps content in Markdown and BibTeX files so updates stay lightweight.
+This repository contains the source for Ayush Sawarni’s academic homepage. The site is built with [Jekyll](https://jekyllrb.com/) and renders a single-page profile that automatically loads publications from a BibTeX file.
+
+## Key features
+
+- Modern, single-page layout with responsive navigation and built-in contact section.
+- Publications and writing samples are generated automatically from [`assets/data/references.bib`](assets/data/references.bib).
+- Simple configuration through [`_config.yml`](./_config.yml) for profile details and social links.
+- Accessible defaults (skip links, keyboard-friendly navigation, reduced-motion support).
 
 ## Getting started
 
@@ -16,26 +23,26 @@ This repository contains the source for Ayush Sawarni’s academic homepage. The
    bundle exec jekyll serve
    ```
 
-   The site is available at <http://localhost:4000>. Changes to Markdown, HTML, CSS, or JavaScript files trigger an automatic rebuild.
+   The site will be available at <http://localhost:4000>. Changes to Markdown, HTML, CSS, or JavaScript files will trigger a rebuild.
 
 ## Updating content
 
-### Profile & metadata
+### Profile & links
 
-Edit [`_config.yml`](./_config.yml) to change your name, role, institution, bio snippet, and social links. The header and contact footer read directly from these values.
+Edit [`_config.yml`](./_config.yml) to update your name, role, institution, bio, and social links. The hero section and footer read directly from these values.
 
 ### Homepage sections
 
-[`index.md`](./index.md) is regular Markdown. Update the headings or lists to change the “About”, “Research interests”, “Open problems”, and “Service” sections without touching the layout.
+[`index.md`](./index.md) uses regular Markdown. Update headings, paragraphs, and bullet lists to customise the “Research focus”, “Research interests”, and other sections.
 
-### Publications from BibTeX
+### Publications via BibTeX
 
-Add or edit entries in [`assets/data/references.bib`](assets/data/references.bib). Supported fields include:
+Add, edit, or remove entries in [`assets/data/references.bib`](assets/data/references.bib). Each entry supports the following fields:
 
 | Field       | Purpose                                               |
 |-------------|-------------------------------------------------------|
 | `title`     | Display title (required)                              |
-| `author`    | Author list (separate names with `and`)               |
+| `author`    | Author list (use `and` between authors)               |
 | `booktitle` | Venue for conference or workshop papers               |
 | `journal`   | Venue for journal papers                              |
 | `year`      | Year of publication (used for sorting)                |
@@ -50,18 +57,18 @@ Add or edit entries in [`assets/data/references.bib`](assets/data/references.bib
 
 Special handling:
 
-- The author that matches `primary_author` (defaults to `site.name`) is rendered in **bold**.
-- Include `alphabetical` in `keywords` to add an “Alphabetical Authors” badge.
-- Include `spotlight`, `oral`, or `talk` in `keywords` to surface presentation highlights alongside any custom `note` text.
+- **Primary author highlighting** – the author that matches `primary_author` (defaults to `site.name`) is automatically bolded.
+- **Alphabetical author lists** – include `alphabetical` in `keywords` to add a badge noting the ordering.
+- **Event spotlights** – include `spotlight`, `oral`, or `talk` in `keywords` to surface presentation highlights.
 
-## Assets
+### Images
 
 Profile and favicon images live in [`assets/img/`](assets/img/). Replace them with files of the same name or update the paths in `_config.yml`.
 
 ## Deployment
 
-The project works with GitHub Pages. Push the branch configured for your Pages site and GitHub will rebuild automatically using the included configuration.
+This site is compatible with GitHub Pages. The `github-pages` gem pins the same dependencies that GitHub uses, so the build locally should match the published output. Push changes to the `main` branch (or the branch configured in your repository settings) and GitHub Pages will rebuild the site automatically.
 
 ## License
 
-Content is © Ayush Sawarni. Templates and build configuration are provided under the MIT License.
+The content in this repository is © Ayush Sawarni. The build configuration and templates are available under the MIT License.

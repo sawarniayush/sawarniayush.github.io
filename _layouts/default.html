@@ -10,48 +10,71 @@
     <meta name="description" content="{{ page.excerpt | strip_html | strip_newlines | default: site.description }}" />
     <meta name="keywords" content="{{ site.keywords | join: ', ' }}" />
     <link rel="icon" href="{{ site.favicon | relative_url }}" type="image/png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}" />
     {% seo %}
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header">
-      <div class="wrapper">
-        <p class="site-kicker">{{ site.title }}</p>
-        <h1 class="site-title"><a href="{{ '/' | relative_url }}">{{ site.name }}</a></h1>
-        <p class="site-meta">
-          {% if site.institution %}{{ site.institution }}{% endif %}
-          {% if site.location %}{% if site.institution %} · {% endif %}{{ site.location }}{% endif %}
-        </p>
+      <div class="container site-header__inner">
+        <a class="site-title" href="{{ '/' | relative_url }}">{{ site.name }}</a>
+        <nav class="site-nav" aria-label="Primary">
+          <button class="site-nav__toggle" aria-expanded="false" aria-controls="site-nav-menu">Menu</button>
+          <ul class="site-nav__list" id="site-nav-menu">
+            <li><a href="#about">About</a></li>
+            <li><a href="#interests">Research Interests</a></li>
+            <li><a href="#publications">Publications</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
       </div>
     </header>
     <main id="main" class="site-main">
       {{ content }}
     </main>
-    <footer id="contact" class="site-footer">
-      <div class="wrapper">
-        <h2 class="section-title">Contact</h2>
-        <ul class="contact-list">
-          <li><strong>Email:</strong> <a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
-          {% if site.social.cv %}
-          <li><strong>CV:</strong> <a href="{{ site.social.cv | relative_url }}" target="_blank" rel="noopener">Download CV</a></li>
-          {% endif %}
-          {% if site.social.google_scholar %}
-          <li><strong>Google Scholar:</strong> <a href="{{ site.social.google_scholar }}" target="_blank" rel="noopener">Scholar profile</a></li>
-          {% endif %}
-          {% if site.social.github %}
-          <li><strong>GitHub:</strong> <a href="{{ site.social.github }}" target="_blank" rel="noopener">{{ site.social.github | split: '/' | last }}</a></li>
-          {% endif %}
-          {% if site.social.linkedin %}
-          <li><strong>LinkedIn:</strong> <a href="{{ site.social.linkedin }}" target="_blank" rel="noopener">Profile</a></li>
-          {% endif %}
-          {% if site.social.twitter %}
-          <li><strong>Twitter:</strong> <a href="{{ site.social.twitter }}" target="_blank" rel="noopener">@{{ site.social.twitter | split: '/' | last }}</a></li>
-          {% endif %}
-        </ul>
-        <p class="site-footer__note">© {{ site.time | date: '%Y' }} {{ site.name }}.</p>
+    <footer class="site-footer" id="contact">
+      <div class="container">
+        <h2 class="section-title">Get in touch</h2>
+        <div class="contact-grid">
+          <div>
+            <p class="contact-item"><strong>Email:</strong> <a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+            {% if site.social.linkedin %}
+            <p class="contact-item"><strong>LinkedIn:</strong> <a href="{{ site.social.linkedin }}" target="_blank" rel="noopener">{{ site.social.linkedin }}</a></p>
+            {% endif %}
+            {% if site.social.twitter %}
+            <p class="contact-item"><strong>Twitter:</strong> <a href="{{ site.social.twitter }}" target="_blank" rel="noopener">@{{ site.social.twitter | split: '/' | last }}</a></p>
+            {% endif %}
+          </div>
+          <div>
+            {% if site.social.google_scholar %}
+            <p class="contact-item"><strong>Google Scholar:</strong> <a href="{{ site.social.google_scholar }}" target="_blank" rel="noopener">Scholar Profile</a></p>
+            {% endif %}
+            {% if site.social.github %}
+            <p class="contact-item"><strong>GitHub:</strong> <a href="{{ site.social.github }}" target="_blank" rel="noopener">{{ site.social.github | split: '/' | last }}</a></p>
+            {% endif %}
+            {% if site.social.cv %}
+            <p class="contact-item"><strong>CV:</strong> <a href="{{ site.social.cv | relative_url }}" target="_blank" rel="noopener">Download CV</a></p>
+            {% endif %}
+          </div>
+        </div>
+        <p class="site-footer__note">© {{ site.time | date: '%Y' }} {{ site.name }}. Built with Jekyll.</p>
       </div>
     </footer>
+    <script>
+      (function () {
+        const toggle = document.querySelector('.site-nav__toggle');
+        const menu = document.querySelector('#site-nav-menu');
+        if (!toggle || !menu) return;
+        toggle.addEventListener('click', () => {
+          const expanded = toggle.getAttribute('aria-expanded') === 'true';
+          toggle.setAttribute('aria-expanded', String(!expanded));
+          menu.classList.toggle('is-open');
+        });
+      })();
+    </script>
     {% if page.scripts %}
       {% for script in page.scripts %}
       <script src="{{ script | relative_url }}" defer></script>

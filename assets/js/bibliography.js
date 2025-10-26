@@ -57,6 +57,13 @@
     return entries;
   }
 
+  function toTitleCase(str) {
+    return str
+      .split(' ')
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(' ');
+  }
+
   function formatAuthors(authorField) {
     if (!authorField) return '';
     const authors = authorField.split(/\s+and\s+/i).map((name) => name.trim());
@@ -89,14 +96,27 @@
 
   function render(entries) {
     if (!entries.length) {
-      container.innerHTML = '<li class="publication-item">No publications found yet.</li>';
+      container.innerHTML = '<p>No publications found. Update your BibTeX file to see entries here.</p>';
       return;
     }
 
     const yearValue = (tags) => parseInt(tags.year, 10) || 0;
     const monthValue = (tags) => {
       if (!tags.month) return 0;
-      const monthNames = ['jan', 'feb', 'mar', 'apr', 'may', 'jun', 'jul', 'aug', 'sep', 'oct', 'nov', 'dec'];
+      const monthNames = [
+        'jan',
+        'feb',
+        'mar',
+        'apr',
+        'may',
+        'jun',
+        'jul',
+        'aug',
+        'sep',
+        'oct',
+        'nov',
+        'dec'
+      ];
       const normalised = tags.month.toLowerCase().slice(0, 3);
       const index = monthNames.indexOf(normalised);
       return index === -1 ? 0 : index + 1;
@@ -108,7 +128,7 @@
       return monthValue(b.tags) - monthValue(a.tags);
     });
 
-    const items = entries.map(({ tags }) => {
+    const cards = entries.map(({ tags }) => {
       const title = tags.title || tags.booktitle || tags.journal || 'Untitled';
       const authors = formatAuthors(tags.author);
       const venue = tags.booktitle || tags.journal || tags.school || tags.howpublished || '';
@@ -127,8 +147,7 @@
       const keywords = normaliseKeywords(tags.keywords);
       const badges = keywords
         .filter((keyword) => keyword !== 'alphabetical')
-        .map((keyword) => keyword.replace(/\b\w/g, (char) => char.toUpperCase()))
-        .map((label) => createTag(label));
+        .map((keyword) => createTag(toTitleCase(keyword)));
 
       if (keywords.includes('alphabetical')) {
         badges.push(createTag('Alphabetical Authors'));
@@ -140,25 +159,30 @@
       if (keywords.includes('talk')) note.push('Talk');
       if (tags.note) note.push(tags.note);
 
-      const linkMarkup = links.length ? `<p class="publication-links">${links.join(' · ')}</p>` : '';
-      const badgeMarkup = badges.length ? `<div class="publication-tags">${badges.join('')}</div>` : '';
-      const noteMarkup = note.length ? `<p class="publication-note">${note.join(' · ')}</p>` : '';
-      const safeTitle = title.replace(/\{\}/g, '');
+      const spotlightText = note.length ? `<p class="publication-card__note">${note.join(' · ')}</p>` : '';
+      const linkMarkup = links.length
+        ? `<div class="publication-card__links">${links.map((link) => `<span>${link}</span>`).join('')}</div>`
+        : '';
+      const badgeMarkup = badges.length
+        ? `<div class="publication-card__tags">${badges.join('')}</div>`
+        : '';
+
       const titleLink = tags.url || tags.link || tags.pdf || '#';
+      const safeTitle = title.replace(/\{\}/g, '');
 
       return `
-        <li class="publication-item">
-          <h3 class="publication-title"><a href="${titleLink}" target="_blank" rel="noopener">${safeTitle}</a></h3>
-          ${authors ? `<p class="publication-authors">${authors}</p>` : ''}
-          ${venueLine ? `<p class="publication-meta">${venueLine}</p>` : ''}
+        <article class="publication-card">
+          <h3 class="publication-card__title"><a href="${titleLink}" target="_blank" rel="noopener">${safeTitle}</a></h3>
+          ${venueLine ? `<p class="publication-card__meta">${venueLine}</p>` : ''}
+          ${authors ? `<p class="publication-card__authors">${authors}</p>` : ''}
           ${badgeMarkup}
           ${linkMarkup}
-          ${noteMarkup}
-        </li>
+          ${spotlightText}
+        </article>
       `;
     });
 
-    container.innerHTML = items.join('');
+    container.innerHTML = cards.join('');
   }
 
   fetch(bibliographyPath)
@@ -171,6 +195,6 @@
       render(entries);
     })
     .catch(() => {
-      container.innerHTML = '<li class="publication-item">Unable to load publications right now.</li>';
+      container.innerHTML = '<p>Unable to load publications right now. Please try again later.</p>';
     });
 })();
