@@ -205,14 +205,14 @@ def _render_entry(fields: Dict[str, str], index: int) -> str:
     return "\n".join(parts)
 
 
-def _sort_key(fields: Dict[str, str]) -> Tuple[int, str]:
+def _sort_key(fields: Dict[str, str]) -> Tuple[int, int]:
     year_str = fields.get("year", "").strip()
     try:
         year_value = int(year_str)
     except ValueError:
         year_value = -10**9
-    title = fields.get("title", "").strip().lower()
-    return year_value, title
+    order = fields.get("_order", 0)
+    return year_value, -order
 
 
 def _render(entries: Iterable[Dict[str, str]]) -> str:
@@ -260,7 +260,11 @@ def _parse_args() -> argparse.Namespace:
 def main() -> None:
     args = _parse_args()
     text = _load_bibtex()
-    entries = [_parse_entry(entry) for entry in _split_entries(text)]
+    entries = []
+    for order, entry in enumerate(_split_entries(text)):
+        fields = _parse_entry(entry)
+        fields["_order"] = order
+        entries.append(fields)
     entries.sort(key=_sort_key, reverse=True)
 
     content = _render(entries)

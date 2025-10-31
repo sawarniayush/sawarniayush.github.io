@@ -7,23 +7,23 @@
 <li>
 <div class="pub-row">
   <div class="col-sm-9" style="position: relative;padding-right: 15px;padding-left: 20px;">
-    <div class="title"><a href="https://arxiv.org/abs/2505.22820">Preference Learning with Response Time: Robust Losses and Guarantees</a></div>
-    <div class="author"> <strong>Ayush Sawarni</strong>, Sahasrajit Sarmasarkar, Vasilis Syrgkanis</div>
-    <div class="periodical"><em>NeurIPS</em> 2025</div>
+    <div class="title"><a href="https://arxiv.org/abs/2510.19672">Policy Learning with Abstention</a></div>
+    <div class="author"> <strong>Ayush Sawarni</strong>, Jikai Jin, Justin Whitehouse, Vasilis Syrgkanis</div>
+    <div class="periodical"><em>(Under Submission)</em> 2025</div>
     <div class="links">
-      <a href="https://arxiv.org/pdf/2505.22820" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
-      <a href="https://youtu.be/wiPLQZZORlk" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Talk</a>
+      <a href="https://arxiv.org/pdf/2510.19672" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
     </div>
   </div>
 </div>
   
 <div class="pub-row">
   <div class="col-sm-9" style="position: relative;padding-right: 15px;padding-left: 20px;">
-    <div class="title"><a href="https://arxiv.org/abs/2510.19672">Policy Learning with Abstention</a></div>
-    <div class="author"> <strong>Ayush Sawarni</strong>, Jikai Jin, Justin Whitehouse, Vasilis Syrgkanis</div>
-    <div class="periodical"><em>(Under Submission)</em> 2025</div>
+    <div class="title"><a href="https://arxiv.org/abs/2505.22820">Preference Learning with Response Time: Robust Losses and Guarantees</a></div>
+    <div class="author"> <strong>Ayush Sawarni</strong>, Sahasrajit Sarmasarkar, Vasilis Syrgkanis</div>
+    <div class="periodical"><em>NeurIPS</em> 2025</div>
     <div class="links">
-      <a href="https://arxiv.org/pdf/2510.19672" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+      <a href="https://arxiv.org/pdf/2505.22820" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
+      <a href="https://youtu.be/wiPLQZZORlk" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">Talk</a>
     </div>
   </div>
 </div>
