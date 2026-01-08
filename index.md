@@ -4,7 +4,7 @@ layout: homepage
 
 ## About Me
 
-I am a second-year Operations Research PhD student at Stanford University. I am advised by Prof. [Vasilis Syrgkanis](https://vsyrgkanis.com/) and am part of the [Stanford Causal AI Lab](https://scail.stanford.edu/).
+I am a PhD student in Operations Research at Stanford University. I am advised by Prof. [Vasilis Syrgkanis](https://vsyrgkanis.com/) and am part of the [Stanford Causal AI Lab](https://scail.stanford.edu/).
 
 Before starting my PhD, I was a Research Fellow at Microsoft Research India, where I worked with [Gaurav Sinha](https://www.microsoft.com/en-us/research/people/gauravsinha/) on problems related to online learning with large decision sets.
 
