@@ -200,8 +200,7 @@ def _render_entry(fields: Dict[str, str], index: int) -> str:
         parts.append("    </div>")
     parts.append("  </div>")
     parts.append("</div>")
-    spacer = "  " if index < 2 else ""
-    parts.append(spacer)
+    parts.append("")
     return "\n".join(parts)
 
 
