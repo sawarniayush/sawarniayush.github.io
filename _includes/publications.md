@@ -9,13 +9,21 @@
   <div class="col-sm-9" style="position: relative;padding-right: 15px;padding-left: 20px;">
     <div class="title"><a href="https://arxiv.org/abs/2510.19672">Policy Learning with Abstention</a></div>
     <div class="author"> <strong>Ayush Sawarni</strong>, Jikai Jin, Justin Whitehouse, Vasilis Syrgkanis</div>
-    <div class="periodical"><em>(Under Submission)</em> 2025</div>
+    <div class="periodical"><em>AISTATS</em> 2026</div>
     <div class="links">
       <a href="https://arxiv.org/pdf/2510.19672" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px;">PDF</a>
     </div>
   </div>
 </div>
-  
+
+<div class="pub-row">
+  <div class="col-sm-9" style="position: relative;padding-right: 15px;padding-left: 20px;">
+    <div class="title"><a href="">CausalReasoningBenchmark</a></div>
+    <div class="author"> <strong>Ayush Sawarni</strong></div>
+    <div class="periodical"><em>(Under Submission)</em> 2026 <strong><i style="color:#e74d3c">(Oral presentation at RLEval Workshop, ACM CAIS)</i></strong></div>
+  </div>
+</div>
+
 <div class="pub-row">
   <div class="col-sm-9" style="position: relative;padding-right: 15px;padding-left: 20px;">
     <div class="title"><a href="https://arxiv.org/abs/2505.22820">Preference Learning with Response Time: Robust Losses and Guarantees</a></div>
@@ -27,7 +35,7 @@
     </div>
   </div>
 </div>
-  
+
 <div class="pub-row">
   <div class="col-sm-9" style="position: relative;padding-right: 15px;padding-left: 20px;">
     <div class="title"><a href="">Generalized Linear Bandits with Limited Adaptivity</a></div>
