@@ -179,6 +179,8 @@ def _render_entry(fields: Dict[str, str], index: int) -> str:
     if highlight:
         color = fields.get("highlight_color", "#e74d3c").strip() or "#e74d3c"
         highlight_html = f' <strong><i style="color:{color}">{highlight}</i></strong>'
+    note = fields.get("note", "").strip()
+    note_html = f" {note}" if note else ""
     links = _build_links(fields)
 
     parts = [
@@ -191,8 +193,8 @@ def _render_entry(fields: Dict[str, str], index: int) -> str:
         parts.append(f'    <div class="title"><a href="">{title}</a></div>')
     prefix = " " if author_text.startswith("<") else ""
     parts.append(f'    <div class="author">{prefix}{author_text}</div>')
-    if periodical or highlight_html:
-        periodical_html = periodical + highlight_html
+    if periodical or highlight_html or note_html:
+        periodical_html = periodical + highlight_html + note_html
         parts.append(f"    <div class=\"periodical\">{periodical_html.strip()}</div>")
     if links:
         parts.append('    <div class="links">')
