@@ -19,7 +19,7 @@
 <div class="pub-row">
   <div class="col-sm-9" style="position: relative;padding-right: 15px;padding-left: 20px;">
     <div class="title"><a href="">CausalReasoningBenchmark</a></div>
-    <div class="author">Jiyuan Tan Ayush Sawarni, Vasilis Syrgkanis</div>
+    <div class="author"> <strong>Ayush Sawarni</strong>, Jiyuan Tan, Vasilis Syrgkanis</div>
     <div class="periodical"><em>(Under Submission) Oral presentation at RLEval Workshop, ACM CAIS</em> 2026</div>
   </div>
 </div>
